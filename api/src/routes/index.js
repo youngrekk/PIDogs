@@ -21,24 +21,44 @@ router.get('/dogs', async (req, res) => {
     const perros = await arrayPerros;
     const perrosDb = await Dog.findAll();
     let dogsFiltered = [];
+
+
     for (let i = 0; i < perros.length; i++) {
+        let maxWeightt = perros[i].weight.imperial.split(" ")[2]
         dogsFiltered.push({
             id: perros[i].id,
             name: perros[i].name,
             temperament: perros[i].temperament,
+            maxWeight: maxWeightt,
             weight: perros[i].weight,
             image: perros[i].image
         })
     }
 
     for (let i = 0; i < perrosDb.length; i++) {
-        dogsFiltered.push(perrosDb[i]);
+        let maxWeightt = perrosDb[i].weight.split(" ")[2]
+        dogsFiltered.push({
+            id: `${perrosDb[i].dbId}db`,
+            name: perrosDb[i].name,
+            temperament: perrosDb[i].temperament,
+            maxWeight: maxWeightt,
+            height: {
+                imperial: perrosDb[i].height
+            },
+            weight: {
+                imperial: perrosDb[i].weight
+            },
+            image: {
+                url: "https://img1.freepng.es/20180401/zww/kisspng-shiba-inu-dogecoin-clip-art-doge-5ac19a4e7ef1f4.89995344152263739052.jpg"
+            }
+        });
     }
+
 
     if(req.query.hasOwnProperty("name")) {
             let nombre = req.query;
-            let dogs = dogsFiltered.filter(dog => dog.name === nombre.name)
-            return res.json(dogs)
+            let dogsByName = dogsFiltered.filter(dog => dog.name === nombre.name)
+            return res.json(dogsByName)
     }else return res.json(dogsFiltered);
 });
 

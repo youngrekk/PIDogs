@@ -1,0 +1,134 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-border {
+    margin: 30px 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid green;
+    border-radius: 6px;
+
+}
+
+.formCreate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.name-life_span-container {
+    display: flex;
+    gap: 110px;
+}
+
+
+.height-weight-container {
+    display: flex;
+    gap: 110px;
+}
+
+.min-height-weight {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.height-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.weight-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.h2-create {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+
+.btn-types {
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 3px 8px;
+    cursor: pointer;
+    border: 2px solid green;
+    color: green;
+    background-color: white;
+}
+
+.btn-types:hover {
+    background: green;
+    color: white;
+}
+
+.checkbox-content {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    max-width: 5    0%;
+    justify-content: center;
+}
+
+
+
+.danger {
+    color: red;
+}
+
+.temperaments-item {
+    color: green;
+    border: 2px solid green;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 3px
+}
+
+.temperaments-item:hover {
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.temperaments-item-selected {
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 3px
+}
+
+.submit-button {
+	background-color:green;
+	border-radius:11px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.submit-button:hover {
+	background-color: rgb(0, 162, 0);;
+}
+.submit-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+

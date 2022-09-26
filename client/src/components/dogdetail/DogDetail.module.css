@@ -1,0 +1,18 @@
+.detail-card {
+    display: flex;
+}
+.img-detail-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-detail {
+    border: 3px solid green;
+    border-radius: 4px;
+    margin: 70px
+}
+.img-dog {
+    height: 290px;
+    margin: 30px;
+}

@@ -1,0 +1,18 @@
+.img {
+    max-width: 80%;
+    height: auto;
+    margin-left: 4vh;
+  }
+  
+  .div-description {
+    padding: 10px;
+  }
+    
+  .div-name {
+    margin: 0 0 10px 0;
+  }
+  
+  .cards {
+    border: 1px solid green;
+    border-radius: 10px;
+  }
