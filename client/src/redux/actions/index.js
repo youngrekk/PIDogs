@@ -1,9 +1,14 @@
+
 import axios from "axios";
 
+import { REACT_API_URL } from "./config.js"
+
 export const getAllDogs = () => {
+
   return async (dispatch) => {
     try {
-      const allDogs = await axios.get(`http://localhost:3001/dogs`)
+      console.log(process.env)
+      const allDogs = await axios.get(`${REACT_API_URL}/dogs`)
       dispatch({type: "GET_ALL_DOGS", payload: allDogs.data})
     } catch (error) {
       console.error("Error in GET ALL DOGS", error.message)
@@ -100,3 +105,10 @@ export const filterByOrigin = (origin) => {
     payload: origin,
   };
 };
+
+export const addTemperament = (temperament) => {
+  return {
+    type: "ADD_TEMPERAMENT",
+    payload: temperament
+  }
+}

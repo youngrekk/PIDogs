@@ -5,7 +5,8 @@ const initialState = {
     dogs: [],
     allDogs: [],
     dog: {},
-    temperaments: []
+    temperaments: [],
+    temperament: ""
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -50,7 +51,11 @@ const rootReducer = (state = initialState, action) => {
             };
         
         case "FILTER_BY_TEMPERAMENT":
-            let filtro = state.allDogs.filter(d => d.temperament.includes(action.payload) == true)
+            let filtro;
+
+            if (state.dogs.length > 1) {
+                filtro = state.dogs.filter(d => d.temperament.includes(action.payload) == true)
+            } else filtro = state.allDogs.filter(d => d.temperament.includes(action.payload) == true)
             
 
             return {
@@ -82,7 +87,10 @@ const rootReducer = (state = initialState, action) => {
             };
         
         case "ORDER_BY": 
-            let filterOrderBy = [...state.allDogs];
+            let filterOrderBy;
+
+            if (state.dogs.length > 1) filterOrderBy = [...state.dogs];
+            else filterOrderBy = [...state.allDogs];
 
             if (action.payload === "A-Z") {
                 filterOrderBy = filterOrderBy.sort((a, b) =>
@@ -104,6 +112,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 dogs: filterOrderBy
+            }
+
+        case "ADD_TEMPERAMENT" : 
+            
+
+            return {
+                ...state,
+                temperament: action.payload 
             }
         
         default :
